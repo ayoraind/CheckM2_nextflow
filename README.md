@@ -12,7 +12,7 @@
         Mandatory arguments:
          --assemblies                   Query fasta file of sequences you wish to supply as input (e.g., "/MIGE/01_DATA/01_FASTA/T055-8-*.fasta")
          --output_dir                   Output directory to place output (e.g., "/MIGE/01_DATA/03_ASSEMBLY")
-	 --db				Filepath to reference db
+	 --db				Filepath to reference db (e.g., /path/to/CheckM2_database/uniref100.KO.1.dmnd) 
          
         Optional arguments:
          --help                         This usage statement.
