@@ -34,15 +34,15 @@ workflow  {
 	   CHECKM2_PREDICT(assemblies_ch, final_params.db)
 	   
 	   combined_quality_report_ch = CHECKM2_PREDICT.out.checkm2_tsv_ch
-	   			.map { meta, file -> file.readLines() }
-				.collect()
+	   			.map { meta, file -> file.readLines() } // read contents of each output file
+				.collect()  // gather all lines from all files into a single list
 				.map { lines ->
-					def header = lines[0]
-					def data = lines.flatten().findAll { it != header }
-					(header + "\n") + data.sort().join("\n")
+					def header = lines[0]  // get header from the first file
+					def data = lines.flatten().findAll { it != header }  // remove all header lines
+					(header + "\n") + data.sort().join("\n")  // add header at the beginning and join sorted data
 				//	(header + "\n")
 				}
-				.unique()
+				.unique() // probably not necessary, since previous lines are non-duplicated anyway
 				
 	// combined_quality_report_ch.view()			
 	   combined_quality_report_ch
