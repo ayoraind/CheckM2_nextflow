@@ -1,11 +1,11 @@
 process CHECKM2_PREDICT {
     tag "$meta"
-    publishDir "${params.output_dir}", mode:'copy'
+    // publishDir "${params.output_dir}", mode:'copy'
 
-    errorStrategy { task.attempt <= 2 ? "retry" : "ignore" }
-    maxRetries 5
+    // errorStrategy  task.attempt <= 2 ? "retry" : "ignore" 
+    // maxRetries 5
     
-    conda "${projectDir}/conda_environments/checkm2.yml"
+    conda "checkm2"
     
     input:
     tuple val(meta), path(fasta)
@@ -20,7 +20,7 @@ process CHECKM2_PREDICT {
     task.ext.when == null || task.ext.when
 
     script:
-    def args = task.ext.args ?: ''
+    def _args = task.ext.args ?: ''
     """
     
     checkm2 predict --input ${fasta} --output-directory ${meta} --threads 1 --database_path ${db}
