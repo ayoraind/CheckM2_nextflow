@@ -22,7 +22,7 @@
 
 
 ## Introduction
-This pipeline implements checkm2 for generating information on genome completeness and other QC metrics.   
+This pipeline implements CheckM2 for generating information on genome completeness and other QC metrics.   
 
 
 ## Sample command
@@ -31,11 +31,12 @@ An example of a command to run this pipeline is:
 ```
 nextflow run main.nf --reads "Sample_files/*.fasta" --output_dir "test2" --db "FilePathToDB"
 ```
+Nextflow version 25.10.4 and above has to be used.
 
 The current version of CheckM2 database can be downloaded from zenodo. More instructions can be found in CheckM2's [Github page](https://github.com/chklovski/CheckM2?tab=readme-ov-file#databases).
 
 ## Word of Note
-This is an ongoing project at the Microbial Genome Analysis Group, Institute for Infection Prevention and Hospital Epidemiology, Üniversitätsklinikum, Freiburg. The project is funded by BMBF, Germany, and is led by [Dr. Sandra Reuter](https://www.uniklinik-freiburg.de/institute-for-infection-prevention-and-control/microbial-genome-analysis.html).
+This is an ongoing project at the Microbial Genome Analysis Group, Institute for Infection Prevention and Hospital Epidemiology, ï¿½niversitï¿½tsklinikum, Freiburg. The project is funded by BMBF, Germany, and is led by [Dr. Sandra Reuter](https://www.uniklinik-freiburg.de/institute-for-infection-prevention-and-control/microbial-genome-analysis.html).
 
 
 ## Authors and acknowledgment
