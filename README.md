@@ -29,7 +29,7 @@ This pipeline implements CheckM2 for generating information on genome completene
 An example of a command to run this pipeline is:
 
 ```
-nextflow run main.nf --reads "Sample_files/*.fasta" --output_dir "test2" --db "FilePathToDB"
+nextflow run main.nf --reads "Sample_files/*.fasta" --output_dir "test2" --db "FilePathToDB" -profile conda
 ```
 Nextflow version 25.10.4 and above has to be used.
 
