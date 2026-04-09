@@ -34,7 +34,7 @@ def pipeline_start_message(String version, Map params){
     log.info " TRACS: TAPIR Pipeline version ${version}"
     log.info "===================================================================================="
     log.info "Running version   : ${version}"
-    log.info "Fastq inputs      : ${params.reads}"
+    log.info "Assemblies inputs : ${params.assemblies}"
     log.info ""
     log.info "-------------------------- Other parameters ----------------------------------------"
     params.sort{ it.key }.each{ k, v ->
@@ -50,7 +50,7 @@ def pipeline_start_message(String version, Map params){
 }
 
 
-def complete_message(Map params, nextflow.script.WorkflowMetadata workflow, String version){
+def complete_message(nextflow.script.WorkflowMetadata workflow, String version){
     // Display complete message
     log.info ""
     log.info "Ran the workflow: ${workflow.scriptName} ${version}"
